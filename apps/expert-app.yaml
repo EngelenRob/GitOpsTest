@@ -1,17 +1,17 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: expert-nginx-dev
+  name: expert-nginx-prd
   namespace: argocd
 spec:
   project: default
   source:
     repoURL: https://github.com/EngelenRob/GitOpsTest.git
     targetRevision: HEAD
-    path: expert/kustomize/overlays/dev
+    path: expert/kustomize/overlays/prod
   destination:
     server: https://kubernetes.default.svc
-    namespace: dev
+    namespace: prd
   syncPolicy:
     automated:
       prune: true
