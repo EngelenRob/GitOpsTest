@@ -11,7 +11,7 @@ spec:
     path: expert/kustomize/overlays/prod
   destination:
     server: https://kubernetes.default.svc
-    namespace: prd
+    namespace: prod
   syncPolicy:
     automated:
       prune: true
